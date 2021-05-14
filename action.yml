@@ -1,0 +1,12 @@
+name: 'rclone & ffmpeg'
+description: 'rclone & ffmpeg'
+inputs:
+  ffmpeg:
+    description: Set to true to install ffmpeg
+    required: false
+    default: 'false'
+runs:
+  using: "composite"
+  steps:
+    - run: ${{ github.action_path }}/install.sh "${{ inputs.ffmpeg }}"
+      shell: bash
